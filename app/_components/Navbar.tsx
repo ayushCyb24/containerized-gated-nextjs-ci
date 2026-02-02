@@ -2,8 +2,11 @@ import Link from 'next/link'
 import React from 'react'
 import LogoutButton from './LogoutButton';
 
-const Navbar = () => {
-    const session=false;
+import { getSession } from '../_lib/session';
+export const dynamic = "force-dynamic";
+
+const Navbar = async () => {
+    const session= await getSession();
   return (
     <nav className="bg-white shadow-sm">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -13,7 +16,7 @@ const Navbar = () => {
             <div className="flex items-center space-x-4">
                 {session ? (
                     <>
-                    <Link href="/contact" className=" hover:text-blue-800 mr-8">
+                    <Link href="/contacts" className=" hover:text-blue-800 mr-8">
                     Contacts
                     </Link>
                     <LogoutButton />

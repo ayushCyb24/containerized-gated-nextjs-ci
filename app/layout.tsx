@@ -6,7 +6,7 @@ import Navbar from "./_components/Navbar";
 
 
 export const metadata: Metadata = {
-  title: "Contanct Manager",
+  title: "Contact Manager",
   description: "A simple contact management application",
 };
 
@@ -24,6 +24,7 @@ export default function RootLayout({
           {children}
           </main>
           </div>
+         
       </body>
     </html>
   );
