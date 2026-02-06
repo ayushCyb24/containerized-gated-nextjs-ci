@@ -18,15 +18,13 @@ export const loginAction = async (formData: FormData) => {
   const user: UserType | undefined = response.data[0];
 
   if (!user) {
-    throw new Error("Invalid credentials");
+   // throw new Error("Invalid credentials");
+    redirect("/login");
+    
   }
-
-  
   await setSession(user);
-
   redirect("/contacts");
 };
-
 export const logoutAction = async () => {
   await deleteSession();
   redirect("/login");

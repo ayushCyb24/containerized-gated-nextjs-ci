@@ -1,6 +1,6 @@
 export interface ContactType {
-    id: string;
+    id:string;
     name: string;
     email: string;  
-    userId: string;
+    userId: string | undefined;
 }
