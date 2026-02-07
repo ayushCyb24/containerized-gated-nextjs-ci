@@ -53,6 +53,19 @@ const ContactForm = ({action, contact}: ContactFormProps) => {
            className="mt-1 block w-full border p-2 rounded-md border-gray-300 shadow-sm
             focus:ring-blue-500 focus:border-blue-500" />
        </div>
+       <div>
+           <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+            Phone Number</label>
+           <input 
+           type="text" 
+           name="phone" 
+           defaultValue={contact?.phone || ""} 
+           placeholder="Enter your phone number"  
+           required
+           className="mt-1 block w-full border p-2 rounded-md border-gray-300 shadow-sm
+            focus:ring-blue-500 focus:border-blue-500" />
+       </div>
+
        {state?.error &&(
         <div className="text-red-500 text-sm">
             {state.error}

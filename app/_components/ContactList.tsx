@@ -15,6 +15,7 @@ const ContactList = ({ contacts}: { contacts: ContactType[] }) => {
                 <div>
                  <h2 className="text-lg font-semibold">{contact.name}</h2>
                  <p>{contact.email}</p>
+                 <p className="text-sm text-gray-500">+91{" "}{contact.phone}</p>
                 </div>
                 <div className="flex item-center self-center gap-3">
                     <Link href={`/contacts/edit/${contact.id}`} className="flex items-center gap-1 text-blue-600 border border-blue-400 rounded-md px-2 py-1.5 hover:bg-blue-100 cursor-pointer">
