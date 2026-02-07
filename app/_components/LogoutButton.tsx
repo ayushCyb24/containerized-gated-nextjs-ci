@@ -1,5 +1,4 @@
 "use client"
-import { log } from 'console'
 import React from 'react'
 import { logoutAction } from '../actions/auth';
 import { useRouter } from 'next/navigation';

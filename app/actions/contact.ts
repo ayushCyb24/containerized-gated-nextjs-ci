@@ -4,10 +4,17 @@ import { createContact,updateContact, deleteContact } from "../api/contact";
 import { getSession } from "../_lib/session";
 import { ContactType } from "../_types/contact";
 
+type ActionState = {
+  success?: boolean;
+  error?: string;
+};
+
+
 export const createContactAction = async (
-    prevState: any, 
+   _prevState: ActionState | null,
     formData: FormData) => {
-      if(!formData){
+     
+        if(!formData){
         return {error: "Form data is missing"};
       }
       const user =await getSession();
@@ -29,7 +36,7 @@ export const createContactAction = async (
 }
 
 export const updateContactAction = async (
-    prevState: any,
+    _prevState: ActionState | null,
      formData: FormData) => {
      if(!formData){
         return {error: "Form data is missing"};
@@ -53,7 +60,7 @@ export const updateContactAction = async (
       }
 }
 
-export const deleteContactAction = async (prevState: any, formData: FormData) => {
+export const deleteContactAction = async (_prevState: ActionState | null, formData: FormData) => {
 
     const id= formData.get("id") as string;
     try {

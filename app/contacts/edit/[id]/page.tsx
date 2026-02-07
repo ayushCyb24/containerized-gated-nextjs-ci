@@ -1,8 +1,7 @@
 import ContactForm from '@/app/_components/ContactForm'
 import { updateContactAction } from '@/app/actions/contact'
 import { getContactById } from '@/app/api/contact'
-import { promises } from 'dns'
-import { get } from 'http'
+
 import React from 'react'
 
 const EditContactPage = async ({params}:{params: Promise<{id: string}>}) => {

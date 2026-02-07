@@ -1,6 +1,6 @@
 import React from 'react'
 import { getSession } from '../_lib/session'
-import { getContact, getContactById } from '../api/contact';
+import { getContact } from '../api/contact';
 import ContactList from '../_components/ContactList';
 
 const ContactPage = async () => {

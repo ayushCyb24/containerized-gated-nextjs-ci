@@ -1,15 +1,21 @@
 "use client";
 
 import { FiTrash2 } from "react-icons/fi";
-import { useRouter } from "next/navigation";
-import { deleteContact } from "../api/contact";
 import { ContactType } from "../_types/contact";
 import { useActionState } from "react";
 
+type ActionState = {
+  success?: boolean;
+  error?: string;
+};
+
 type DeleteButtonProps = {
-    action (prevState: any, formData: FormData): Promise<any>;  
-    contact: ContactType;
-}
+  action: (
+    prevState: ActionState | null,
+    formData: FormData
+  ) => Promise<ActionState>;
+  contact: ContactType;
+};
 
 const DeleteButton = ({action, contact }: DeleteButtonProps) => {
     const[state, formAction]=useActionState(action, null);
