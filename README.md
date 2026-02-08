@@ -1,36 +1,106 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Contact Manager
 
-## Getting Started
+A simple **Contact Manager** application built with **Next.js** that allows users to manage contacts with name, email, and phone number.
 
-First, run the development server:
+The primary focus of this project is to practice **CI pipelines** and **Docker containerization**, while keeping the application logic intentionally lightweight.
 
+---
+
+## 🚀 Features
+- Add and manage contacts
+- Contact fields: name, email, phone number
+- Basic form validation
+- CI checks: lint, type check, and build
+- Dockerized application
+- Automated Docker build validation on pull requests
+
+---
+
+## 🛠 Tech Stack
+- Next.js
+- TypeScript
+- Tailwind CSS
+- Docker
+- GitHub Actions
+
+---
+
+## 📦 Running Locally
+
+### 1️⃣ Clone the repository
 ```bash
+git clone <repository-url>
+cd contact-manager
+2️⃣ Install dependencies
+npm install
+
+3️⃣ Start the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The app will be available at:
+http://localhost:3000
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+🐳 Running with Docker
+Build the Docker image
+docker build -t my-nextjs-app .
 
-## Learn More
+Run the container
+docker run -p 3000:3000 my-nextjs-app
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The application will be available at:
+http://localhost:3000
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+🔄 CI Workflow
 
-## Deploy on Vercel
+This project uses GitHub Actions for Continuous Integration.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Branch behavior:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Push to test branch
+
+Lint check
+
+Type check
+
+Application build
+
+Pull request to main branch
+
+Lint check
+
+Type check
+
+Application build
+
+Docker image build validation
+
+This ensures that only code which passes quality checks and can be successfully containerized is merged into main.
+
+📌**Design_Note:File-based_Storage**
+
+This project uses a simple db.json file for data storage.
+
+This choice is intentional. The main objective of the project is to:
+
+Practice CI/CD workflows
+
+Learn Docker image creation and containerization
+
+Validate Docker builds during pull requests
+
+Using a file-based store keeps the setup minimal and allows focus on CI and Docker concepts rather than database configuration.
+
+Since containers are ephemeral, data stored in db.json is not persisted across container restarts.
+In a production-ready system, this would be replaced with a proper database and persistent storage (e.g., Docker volumes or managed database services).
+
+📈 Future Improvements
+
+Replace file-based storage with a database
+
+Add Docker Compose setup
+
+Improve authentication and session handling
+
+Add automated tests
