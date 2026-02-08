@@ -29,8 +29,8 @@ The primary focus of this project is to practice **CI pipelines** and **Docker c
 
 ### 1️⃣ Clone the repository
 ```bash
-git clone <repository-url>
-cd contact-manager
+git clone https://github.com/ayushCyb24/containerized-gated-nextjs-ci
+cd containerized-gated-nextjs-ci
 2️⃣ Install dependencies
 npm install
 
